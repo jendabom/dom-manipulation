@@ -2,11 +2,17 @@
 <html>
 <head>
   <title>JavaScript Example</title>
+  <style>
+    .padding_update{
+      padding-left: 100px;
+    }
+  </style>
 </head>
 <body>
-  <h1 onmousemove="doSomething()">Alexander Hamilton</h1>
+  <h1 id="myH1" onmousemove="doSomething()">Alexander Hamilton</h1>
   <p onmousedown="doSomethingElse()">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
   <p id="showCoor"></p>
+  <button type="button" onclick="changeHeader()">Do the Thing!</button>
 
   <script>
     function doSomething() {
@@ -19,6 +25,11 @@
 
     function doSomethingElse() {
       console.log("You clicked on the paragraph!");
+    }
+
+    function changeHeader(){
+      document.getElementById("myH1").style.color = "#" +(Math.random()*0xFFFFFF<<0).toString(16);
+      document.getElementById("myH1").classList.toggle("padding_update")
     }
   </script>
 </body>
